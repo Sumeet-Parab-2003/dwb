@@ -1,0 +1,13 @@
+OLAP (Online Analytical Processing) is a category of software tools and technologies that allow users to interactively analyze multidimensional data from different perspectives. It enables users to perform complex calculations, trend analysis, and data modeling on multidimensional data sets, which are typically stored in data warehouses or data marts.
+
+Here are some key OLAP operations:
+
+Slice: Slicing involves selecting a single "slice" of the cube, which represents a two-dimensional view of the data. It means fixing one dimension (or axis) and viewing the data for a specific value in that dimension. For example, if you have a cube with dimensions "Time," "Location," and "Product," slicing by "Time" would show the data for a specific time period across all locations and products.
+
+Dice: Dicing involves selecting a smaller cube or subcube from the larger cube by specifying values for two or more dimensions. This operation allows you to view a subset of the data that meets specific criteria. For example, you can dice a cube by specifying a particular time period, location, and product category.
+
+Roll-up (also known as Drill-up): Rolling up is the opposite of dicing. It involves aggregating data along one or more dimensions to view a higher-level summary. This operation allows you to "drill up" to view data at a higher level of abstraction. For example, if you have data at the daily level, you can roll up to view the data at the monthly or yearly level.
+
+SELECT year,Sum(Revenue) AS Total_Revenue,Sum(Q_sold) as total_Q_sold 
+from FactSales
+grup by year
